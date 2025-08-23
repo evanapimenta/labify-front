@@ -1,0 +1,66 @@
+<div>
+    <div class="absolute inset-0">
+        <img src="/assets/images/auth/bg-gradient.png" alt="image" class="h-full w-full object-cover" />
+    </div>
+    <div
+        class="relative flex min-h-screen justify-center bg-center bg-no-repeat px-6 py-10 dark:bg-[#060818] sm:px-16"
+    >
+        <div
+            class="relative flex w-full max-w-[1502px] flex-col justify-between overflow-hidden rounded-md bg-white/60 backdrop-blur-lg dark:bg-black/50 lg:min-h-[500px] lg:flex-row lg:gap-10 xl:gap-0"
+        >
+            <div
+                class="relative hidden w-full items-center justify-center bg-primary p-5 lg:inline-flex lg:max-w-[835px] xl:-ms-28 ltr:xl:skew-x-[14deg] rtl:xl:skew-x-[-14deg]"
+            >
+                <div class="ltr:xl:-skew-x-[14deg] rtl:xl:skew-x-[14deg]">
+                    <div class="hidden w-full max-w-[430px] lg:block">
+                        <img src="/assets/Adventure_Illustrations/Security_Animated/Security.svg" alt="Cover Image" class="w-full" />
+                    </div>
+                </div>
+            </div>
+            <div class="relative flex w-full flex-col items-center justify-center gap-6 px-4 pb-16 pt-6 sm:px-6 lg:max-w-[667px]">
+                <div class="w-full max-w-[440px] lg:mt-16">
+                    <div class="my-10 lg:mt-0">
+                        <h1 class="text-3xl font-extrabold uppercase !leading-snug text-primary md:text-4xl">Login</h1>
+                        <p class="text-base font-bold leading-normal text-white-dark">Informe seu email e senha para entrar</p>
+                    </div>
+                    <form class="space-y-5 dark:text-white" [formGroup]="form" (submit)="login()">
+                        <div>
+                            <label for="Email">Email</label>
+                            <div class="relative text-white-dark">
+                                <input formControlName="email" id="Email" type="email" placeholder="Digite o Email" class="form-input ps-10 placeholder:text-white-dark" />
+                                <span class="absolute start-4 top-1/2 -translate-y-1/2">
+                                    <icon-mail [fill]="false" />
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="Password">Senha</label>
+                            <div class="relative text-white-dark">
+                                <input formControlName="password" id="Password" type="password" placeholder="Digite a Senha" class="form-input ps-10 placeholder:text-white-dark" />
+                                <span class="absolute start-4 top-1/2 -translate-y-1/2">
+                                    <icon-lock-dots [fill]="false" />
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="flex cursor-pointer items-center">
+                                <input type="checkbox" class="form-checkbox bg-white dark:bg-black" />
+                                <span class="text-white-dark">Lembrar-me</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn bg-primary text-white !mt-6 w-full border-0 uppercase" [disabled]="form.invalid">
+                            Entrar
+                        </button>
+                    </form>
+
+                    <div class="text-center dark:text-white">
+                        Não tem uma conta?
+                        <a routerLink="/sign-up" class="cursor-pointer text-primary underline transition hover:text-black dark:hover:text-white">
+                            Cadastre-se
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
