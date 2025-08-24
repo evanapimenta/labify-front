@@ -5,17 +5,21 @@ import { ApiService } from '../services/api.service';
     providedIn: 'root',
 })
 export class AuthController {
-    constructor(private apiService: ApiService) {}
+    constructor(private apiService: ApiService) { }
 
     login = (data: any) => {
-        debugger
-        return new Promise(() => {
+        return new Promise((resolve, reject) => {
             this.apiService.post(`login`, data).subscribe({
-            next: (resp: any) => {}
+                next: (resp: any) => {
+                    localStorage.setItem('access', JSON.stringify(resp));
+                    resolve(resp);
+                },
+                error: (error) => {
+                    reject(error);
+                }
+            })
         })
-        })
-         
     };
 
-    logout = () => {};
+    logout = () => { };
 }

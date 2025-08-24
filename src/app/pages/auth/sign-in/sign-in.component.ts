@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IconMailComponent } from '../../../icons/icon-mail';
 import { IconLockDotsComponent } from '../../../icons/icon-lock-dots';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormControl, FormsModule, ReactiveFormsModule, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthController } from '../../../core/controllers/auth.controller';
 
@@ -14,7 +14,7 @@ import { AuthController } from '../../../core/controllers/auth.controller';
   styleUrl: './sign-in.component.css'
 })
 export class SignInComponent {
-  constructor(private authController: AuthController){}
+  constructor(private authController: AuthController, private router: Router){}
 
   form!: UntypedFormGroup;
   ngOnInit(): void {
@@ -29,10 +29,7 @@ export class SignInComponent {
  }
 
  login = () => {
-  console.log(this.form.value);
   this.authController.login(this.form.value).then((resp: any) => {
-    console.log(resp);
   })
-
  }
 }

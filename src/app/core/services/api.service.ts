@@ -21,7 +21,6 @@ export class ApiService {
         return this.access?.token;
     }
 
-    //não alterar consulta base apiImperioo
     /**
      * Constructor
      *
@@ -44,7 +43,6 @@ export class ApiService {
     }
 
     post(url: string, data: any, auth: boolean = true): Observable<any> {
-        debugger
         return this._httpClient
             .post<any>(`${this._urlService}/${url}`, data, this.getHeader(auth, true))
             .pipe(timeout(this.timeout), catchError(this.catchError));
