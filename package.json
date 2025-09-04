@@ -22,6 +22,7 @@
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.20",
     "@ng-select/ng-select": "^13.7.0",
+    "@ngrx/store": "^18.0.2",
     "express": "^4.18.2",
     "file-upload-with-preview": "^6.0.2",
     "flatpickr": "^4.6.13",

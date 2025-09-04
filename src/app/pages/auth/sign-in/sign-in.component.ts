@@ -30,6 +30,7 @@ export class SignInComponent {
 
  login = () => {
   this.authController.login(this.form.value).then((resp: any) => {
+    this.router.navigate(['/']);
   })
  }
 }
