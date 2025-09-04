@@ -1,0 +1,53 @@
+<div
+    class="main-section relative font-nunito text-sm font-normal antialiased"
+    [ngClass]="[sidebarCollapsed ? 'toggle-sidebar' : '', 'vertical', 'full', 'ltr']"
+>
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="relative">
+        <!-- sidebar menu overlay -->
+        <div
+            class="fixed inset-0 z-50 bg-[black]/60 lg:hidden"
+            [ngClass]="{ hidden: sidebarCollapsed }"
+            (click)="onSidebarToggle()"
+        ></div>
+
+        <div class="main-container min-h-screen text-black dark:text-white-dark">
+            <!--  BEGIN SIDEBAR  -->
+            <app-sidebar></app-sidebar>
+            <!--  END SIDEBAR  -->
+
+            <div class="main-content flex flex-col min-h-screen">
+                <!--  BEGIN TOP NAVBAR  -->
+                <header class="bg-white dark:bg-[#0e1726] shadow-sm border-b border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center justify-between px-6 py-4">
+                        <div class="flex items-center">
+                            <!-- Botão de abrir sidebar (só aparece quando fechada) -->
+                            <button
+                                *ngIf="sidebarCollapsed"
+                                class="flex h-8 w-8 items-center justify-center rounded-full transition duration-300 hover:bg-gray-500/10 hover:text-primary dark:text-white-light dark:hover:bg-dark-light/10"
+                                (click)="onSidebarToggle()"
+                                title="Abrir menu lateral">
+                                <icon-menu></icon-menu>
+                            </button>
+
+                            <!-- Logo ou espaço reservado para manter altura consistente -->
+                            <div class="h-8 flex items-center ml-4">
+                                <img *ngIf="sidebarCollapsed" [src]="logo" alt="Labify" class="h-8 w-auto" />
+                            </div>
+                        </div>
+
+                        <!-- Espaço vazio para balancear -->
+                        <div></div>
+                    </div>
+                </header>
+                <!--  END TOP NAVBAR  -->
+
+                <!--  BEGIN CONTENT AREA  -->
+                <div class="animation p-6">
+                    <router-outlet></router-outlet>
+                </div>
+                <!--  END CONTENT AREA  -->
+            </div>
+        </div>
+    </div>
+</div>

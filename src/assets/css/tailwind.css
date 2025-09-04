@@ -556,6 +556,98 @@ hover:text-primary hover:before:!bg-primary ltr:before:mr-2 rtl:before:ml-2 dark
     .accordion-content {
         @apply overflow-hidden;
     }
+
+    /* Sidebar styles */
+    .sidebar {
+        transition: all 0.3s ease;
+    }
+
+    .toggle-sidebar .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .toggle-sidebar .main-content {
+        margin-left: 0;
+    }
+
+    .main-content {
+        margin-left: 260px;
+        transition: margin-left 0.3s ease;
+    }
+
+    /* Accordion styles */
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .accordion-content.show {
+        max-height: 500px;
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        color: #506690;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(94, 92, 154, 0.1);
+        color: #3b3f5c;
+    }
+
+    .nav-link.active {
+        background-color: #4361ee;
+        color: white;
+    }
+
+    .sub-menu {
+        padding-left: 1rem;
+    }
+
+    .sub-menu a {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: #506690;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .sub-menu a:hover {
+        color: #5c3b3b;
+    }
+
+    .sub-menu a.active {
+        color: #4361ee;
+        font-weight: 600;
+    }
+
+    /* Dark mode support */
+    .dark .nav-link {
+        color: #888ea8;
+    }
+
+    .dark .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .dark .sub-menu a {
+        color: #888ea8;
+    }
+
+    .dark .sub-menu a:hover {
+        color: #fff;
+    }
+
+    .dark .sub-menu a.active {
+        color: #4361ee;
+    }
 }
 
 /* perfect scrollbar */
