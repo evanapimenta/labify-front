@@ -1,0 +1,14 @@
+<div class="relative">
+  <input
+    type="text"
+    class="peer form-input pl-10 pr-4"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    (input)="onInputChange()"
+    (keyup.enter)="onEnterPress()"
+  />
+  <div class="absolute top-1/2 left-3 -translate-y-1/2 peer-focus:text-primary">
+    <icon-search class="h-5 w-5" />
+  </div>
+</div>

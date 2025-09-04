@@ -13,8 +13,11 @@ export class ApiService {
     private timeout = 300000;
 
     get access() {
-        const access = localStorage.getItem('access');
-        return access ? JSON.parse(access) : null;
+        if (typeof window !== 'undefined' && window.localStorage) {
+            const access = localStorage.getItem('access');
+            return access ? JSON.parse(access) : null;
+        }
+        return null;
     }
 
     get accessToken(): string {

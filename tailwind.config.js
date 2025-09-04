@@ -4,15 +4,19 @@ module.exports = {
   darkMode: 'class',
   theme: { 
     container: { center: true },
-    extend: {
+    extend: 
+      {
+        backgroundImage: {
+        mainGradient: "linear-gradient(to right, #51327d, #a03c80, #db5673)",
+      },
       colors: {
         primary: {
-          DEFAULT: '#4361ee',
+          DEFAULT: '#ea5d7bff',
           light: '#eaf1ff',
           'dark-light': 'rgba(67,97,238,.15)',
         },
         secondary: {
-          DEFAULT: '#805dca',
+          DEFAULT: '#ea5d7bff',
           light: '#ebe4f7',
           'dark-light': 'rgb(128 93 202 / 15%)',
         },
@@ -51,6 +55,21 @@ module.exports = {
           light: '#e0e6ed',
           dark: '#888ea8',
         },
+        darkPurple: {
+          DEFAULT: '#51327d'
+        },
+        lightPurple: {
+          DEFAULT: '#b60e81ff'
+        },  
+        pink: {
+          DEFAULT: '#ea5d7bff'
+        },
+        darkPink: {
+          DEFAULT: '#ce516cff'
+        },
+        orange: {
+          DEFAULT: '#fe8461'
+        },
       },
       fontFamily: {
         nunito: ['Nunito', 'sans-serif'],
@@ -62,6 +81,25 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms')({ strategy: 'class' }),
     require('@tailwindcss/typography'),
+      
+    function ({ addComponents }) {
+      addComponents({
+        '.btn-main': {
+          '@apply bg-pink hover:bg-darkPink rounded text-xs p-2 font-bold text-white transition-all duration-300': {}
+        },
+        '.btn-aux': {
+          '@apply bg-gray-200 hover:bg-gray-300 rounded text-xs p-2 font-semibold border border-gray-300 transition-all duration-300': {}
+        },
+        '.navbar-link': {
+          '@apply cursor-pointer hover:text-lightPurple hover:font-bold transition-all duration-300': {} 
+        }, 
+        '.footer-link': {
+          '@apply transition-transform duration-200 transform hover:scale-105': {}
+        },
+        '.link-active': {
+          '@apply font-bold text-transparent bg-clip-text bg-mainGradient cursor-pointer': {}
+        },
+      })
+    }
   ],
 }
-
