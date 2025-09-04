@@ -1,0 +1,127 @@
+<nav class="border border-gray-200">
+  <div class="max-w-6xl mx-auto flex items-center px-4 py-2">
+    <div class="flex items-center gap-4">
+      <a href="#"
+        ><img
+          src="/assets/images/logo.png"
+          class="w-[120px] sm:w-[150px] h-auto"
+          alt="Logo"/></a>
+      <ul class="flex gap-3 text-[11px] sm:text-[13px]">
+        <li
+          routerLink="#"
+          routerLinkActive="link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="navbar-link"
+        >
+          Perfil
+        </li>
+        <li
+          routerLink="/results"
+          class="navbar-link"
+        >
+          Resultados de Exames
+        </li>
+        <li
+          routerLink="/scheduled"
+          class="navbar-link"
+        >
+          Exames agendados
+        </li>
+      </ul>
+    </div>
+
+    <div class="ml-auto">
+      <div class="relative inline-block">
+        <button
+          type="button"
+          data-te-dropdown-toggle-ref
+          aria-expanded="false"
+          aria-controls="dropdownExample"
+          class="text-white px-4 py-2 rounded"
+        >
+          <img
+            class="w-5 h-5 sm:w-10 sm:h-10 rounded-full"
+            src="/assets/images/profile.png"
+          />
+        </button>
+
+        <ul
+          id="dropdownExample"
+          class="absolute z-50 hidden min-w-max list-none overflow-hidden rounded-md bg-white shadow-lg [&[data-te-dropdown-show]]:block"
+          data-te-dropdown-menu-ref
+        >
+          <li class="px-4 py-2 text-gray-500 text-xs">
+            Bem-vindo(a), <span class="font-bold">Evana</span>!
+          </li>
+          <hr />
+          <li class="block p-2 hover:bg-gray-100 text-xs cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 inline ms-1 me-2 text-pink"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle
+                cx="12"
+                cy="8"
+                r="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 20c0-4 12-4 12 0"
+              />
+            </svg>
+            Meu Perfil
+          </li>
+          <li
+            routerLink="#"
+            class="block p-2 hover:bg-gray-100 text-xs cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 inline ms-1 me-2 text-pink"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33h-.09a1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51h-.09a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82v-.09a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h.09a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v.09a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1v.09z"
+              />
+            </svg>
+            Configurações
+          </li>
+          <li routerLink="#" class="block p-2 hover:bg-gray-100 text-xs">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 inline ms-1 me-2 text-pink"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1"
+              />
+            </svg>
+            Sair
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
