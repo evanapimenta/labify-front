@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from "../navbar/navbar.component";
-import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-  selector: 'app-user-page',
+  selector: 'app-user-profile',
   standalone: true,
-  imports: [
-    NavbarComponent,
-    FooterComponent
-  ],
-  templateUrl: './user-page.component.html',
-  styleUrl: './user-page.component.css'
+  imports: [],
+  templateUrl: './user-profile.component.html',
+  styleUrl: './user-profile.component.css'
 })
-export class UserPageComponent {
+export class UserProfileComponent {
   user = {
     firstName: 'Evana Pimenta',
     dateOfBirth: '09-03-1996',

@@ -101,7 +101,10 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     }
 
     getIconComponent(iconName: string | undefined) {
-        return this.iconMap[iconName || 'icon-user'] || IconUserComponent;
+        if (!iconName) {
+            return null;
+        }
+        return this.iconMap[iconName] || IconUserComponent;
     }
 
     toggleMobileMenu() {

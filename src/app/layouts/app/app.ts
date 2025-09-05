@@ -3,22 +3,20 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
-import { IconMenuComponent } from '../../icons/icon-menu';
+import { HeaderComponent } from '../../components/header/header.component';
 import { Store } from '@ngrx/store';
-import { environment } from '../../../../environment';
 
 @Component({
   selector: 'app-layout',
   templateUrl: './app.html',
   standalone: true,
-  imports: [CommonModule, RouterModule, SidebarComponent, IconMenuComponent],
+  imports: [CommonModule, RouterModule, SidebarComponent, HeaderComponent],
 
 })
 export class AppLayoutComponent {
   sidebarCollapsed = false;
   showTopButton = false;
   store: any;
-  logo = environment.logo;
 
   constructor(public storeData: Store<any>) {
     this.initStore();

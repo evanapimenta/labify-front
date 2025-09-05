@@ -1,9 +1,10 @@
 export enum ENUM_PAGES {
   home = 'home',
-  teste = 'teste',
-  teste2 = 'teste2',
-  exemplo = 'exemplo',
+  user = 'user',
+  profile = 'profile',
+  exams = 'exams',
   laboratories = 'laboratories',
+  management = 'management',
 }
 
 export enum ENUM_STATUS {}
