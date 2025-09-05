@@ -20,7 +20,9 @@
                         <div *ngIf="!item.subItems || item.subItems.length === 0">
                             <a routerLink="{{ item.link }}" class="group" routerLinkActive="active" (click)="toggleMobileMenu()">
                                 <div class="flex items-center">
-                                    <ng-container *ngIf="getIconComponent(item.icon)" [ngComponentOutlet]="getIconComponent(item.icon)" class="shrink-0 group-hover:!text-primary mr-3"></ng-container>
+                                    <div *ngIf="getIconComponent(item.icon)" class="shrink-0 group-hover:!text-primary pr-4">
+                                        <ng-container [ngComponentOutlet]="getIconComponent(item.icon)"></ng-container>
+                                    </div>
 
                                     <span class="text-black dark:text-[#506690] dark:group-hover:text-white-dark">
                                         {{ item.label }}
@@ -31,7 +33,9 @@
                         <ng-container *ngIf="item.subItems && item.subItems.length > 0">
                             <h2 class="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
 
-                                <ng-container *ngIf="getIconComponent(item.icon)" [ngComponentOutlet]="getIconComponent(item.icon)" class="shrink-0 mr-3"></ng-container>
+                                <div *ngIf="getIconComponent(item.icon)" class="shrink-0 pr-4">
+                                    <ng-container [ngComponentOutlet]="getIconComponent(item.icon)"></ng-container>
+                                </div>
 
                                 <span>{{ (item.label) || '&nbsp;' }}</span>
                             </h2>
@@ -39,7 +43,9 @@
                                 <li class="nav-item" *ngFor="let subItem of item.subItems">
                                     <a routerLink="{{ subItem.link }}" class="group" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMobileMenu()">
                                         <div class="flex items-center">
-                                            <ng-container *ngIf="getIconComponent(subItem.icon)" [ngComponentOutlet]="getIconComponent(subItem.icon)" class="shrink-0 group-hover:!text-primary mr-3"></ng-container>
+                                            <div *ngIf="getIconComponent(subItem.icon)" class="shrink-0 group-hover:!text-primary pr-4">
+                                                <ng-container [ngComponentOutlet]="getIconComponent(subItem.icon)"></ng-container>
+                                            </div>
 
                                             <span class="text-black dark:text-[#506690] dark:group-hover:text-white-dark">
                                                 {{ subItem.label }}
